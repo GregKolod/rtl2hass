@@ -35,10 +35,10 @@ FROM python:3 AS final
 # Define environment variables
 # 
 # Use this variable when creating a container to specify the MQTT broker host.
-ENV MQTT_HOST ""
+ENV MQTT_HOST "127.0.0.1"
 ENV MQTT_PORT 1883
-ENV MQTT_USERNAME ""
-ENV MQTT_PASSWORD ""
+ENV MQTT_USERNAME "HA"
+ENV MQTT_PASSWORD "HomRas"
 ENV MQTT_TOPIC rtl_433
 ENV DISCOVERY_PREFIX homeassistant
 ENV DISCOVERY_INTERVAL 600
