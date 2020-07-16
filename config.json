@@ -1,0 +1,36 @@
+{
+  "name": "RTL_433 to MQTT Bridge",
+  "version": "0.05",
+  "slug": "rtl4332mqtt",
+  "description": "SDR-RTL for Oregon sensors on 433Mhz",
+  "url": "https://github.com/GregKolod/hassio_addons",
+  "startup": "before",
+  "boot": "auto",
+  "map": ["config:rw", "ssl"],
+  "devices": ["/dev/bus/usb:/dev/bus/usb:rwm"],
+  "host_network": "False",
+  "arch": [
+    "aarch64",
+    "amd64",
+    "armv7",
+    "i386"
+  ],
+  "options":
+  {
+    "mqtt_host": "rpi3bp",
+    "mqtt_user": "HA",
+    "mqtt_password": "HomRas",
+    "mqtt_topic": "home/rtl_433",
+    "protocol": "-R 12",
+    "frequency": 433920000
+  },
+  "schema":
+  {
+    "mqtt_host": "str",
+    "mqtt_user": "str",
+    "mqtt_password": "str",
+    "mqtt_topic": "str",
+    "protocol": "str",
+    "frequency": "int"
+   }
+}
